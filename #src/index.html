@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upqode</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="wrapper">
+
+  <article id="HOME">
+    <div class="header">
+        <div class="logo">
+            <img src="./img/Path_716.png"/>
+            <h1>UPQODE</h1>
+        </div>
+
+        <nav role="navigation">
+        
+          <div id="menuToggle">
+  
+            <input type="checkbox" />
+            
+            <span></span>
+            <span></span>
+            <span></span>
+  
+            <ul id="menu">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Services</a></li>
+              <li><a href="#">Team</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <ul class="nav">
+          <li id="HOME"><a href="#HOME">Home</a></li>
+          <li id="SERVICES"><a href="#SERVICES">Services</a></li> 
+          <li><a href="#TEAM">Team</a></li> 
+          <li><a href="#CONTACT US">Contact Us</a></li> 
+        </ul>
+
+    </div>
+  </article>
+
+    <div class="slider">
+        <div class="mySlides active">
+          <img src="./img/image.png" style="width:100%"/>
+          <h1>Mileage Made Simple</h1>
+          <p>Motivation And Your Personal Vision An Unbeatable Force</p>
+          <button><a href="#">Start Free Trial</a></button>
+          </div>
+        
+          <div class="mySlides">
+          <img src="./img/60936.jpg"  style="width:100%">
+          </div>
+        
+          <div class="mySlides">
+            <div id="player"></div>
+          </div>
+    </div>
+    
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  
+</div>
+<br>
+
+<input type="radio" name="slider" id="slide-1-trigger" class="trigger" checked onclick="currentSlide(1)">
+<label class="btn" for="slide-1-trigger"></label>
+<input type="radio" name="slider" id="slide-2-trigger" class="trigger" onclick="currentSlide(2)">
+<label class="btn" for="slide-2-trigger"></label>
+<input type="radio" name="slider" id="slide-3-trigger" class="trigger" onclick="currentSlide(3)">
+<label class="btn" for="slide-3-trigger"></label>
+
+</div>
+
+<article id="CONTACT US">
+<div class="footer">
+<div class="footer_logo">
+<img src="./img/Path_716.png"/>
+</div>
+<h1>UPQODE</h1>
+<ul class="nav">
+<li id="HOME"><a href="#HOME">HOME</a></li>
+<li id="SERVICES"><a href="#SERVICES">SERVICES</a></li> 
+<li><a href="#TEAM">TEAM</a></li> 
+<li><a href="#CONTACT US">CONTACT US</a></li> 
+</ul>
+  <p>© Upqode 2019. All Right Reserved.</p>
+</div>
+</article>
+
+<script src="js/slider.js"></script>
+<script src="js/nav_active.js"></script>
+<script>
+
+var tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+var player;
+function onYouTubeIframeAPIReady() {
+  player = new YT.Player('player', {
+    height: '600',
+    width: '800',
+    videoId: '-hTVNidxg2s',
+    playerVars: {
+      'playsinline': 1
+    },
+    events: {
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
+    }
+  });
+}
+
+function onPlayerReady(event) {
+  event.target.playVideo();
+}
+
+var done = false;
+function onPlayerStateChange(event) {
+  if (event.data == YT.PlayerState.PLAYING && !done) {
+    setTimeout(stopVideo, 60000);
+    done = true;
+  }
+}
+function stopVideo() {
+  player.stopVideo();
+}
+</script>
+</body>
+</html>
